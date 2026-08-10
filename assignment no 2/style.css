@@ -1,0 +1,54 @@
+/* Background of the page */
+body {
+    background-color: lightblue;
+    font-family: Arial;
+}
+
+
+/* Submit button */
+#btn {
+    background-color: black;
+    color: white;
+    width: 90px;
+    height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+/* Button when mouse is on it */
+#btn:hover {
+    background-color: red;
+}
+
+
+/* Input boxes */
+input {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+
+/* Result area */
+#result {
+    margin-top: 20px;
+}
+
+
+/* Table */
+table {
+    width: 800px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+}
+
+
+/* Table cells */
+td,
+th {
+    border: 1px solid black;
+    padding: 8px;
+}
