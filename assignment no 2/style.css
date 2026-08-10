@@ -1,11 +1,11 @@
-/* Background of the page */
+
 body {
     background-color: lightblue;
     font-family: Arial;
 }
 
 
-/* Submit button */
+
 #btn {
     background-color: black;
     color: white;
@@ -16,13 +16,13 @@ body {
 }
 
 
-/* Button when mouse is on it */
+
 #btn:hover {
     background-color: red;
 }
 
 
-/* Input boxes */
+
 input {
     width: 200px;
     height: 30px;
@@ -31,13 +31,13 @@ input {
 }
 
 
-/* Result area */
+
 #result {
     margin-top: 20px;
 }
 
 
-/* Table */
+
 table {
     width: 800px;
     border: 1px solid black;
@@ -46,7 +46,7 @@ table {
 }
 
 
-/* Table cells */
+
 td,
 th {
     border: 1px solid black;

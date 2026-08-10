@@ -1,37 +1,38 @@
 function addTask() {
 
-    // Get the input value
+    //  input value
     let input = document.getElementById("taskInput");
     let task = input.value;
 
-    // Check if input is empty
+    // check input empty
     if (task === "") {
         alert("Please enter a task");
         return;
     }
 
-    // Create a new list item
+    // new list item
     let li = document.createElement("li");
 
-    // Add task text
+    // add task 
     li.innerHTML = task;
-    // Create delete button
+
+    // delete btn
     let deleteButton = document.createElement("button");
 
     deleteButton.innerHTML = "Delete";
     deleteButton.className = "delete";
 
-    // Delete task when button is clicked
+    //delete task btn  is clicked
     deleteButton.onclick = function() {
         li.remove();
     };
 
-    // Add delete button to list item
+    // add delete button to list item
     li.appendChild(deleteButton);
 
-    // Add list item to the list
+    // add list item to the list
     document.getElementById("taskList").appendChild(li);
 
-    // Clear input
+    // clear input
     input.value = "";
 }

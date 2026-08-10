@@ -1,35 +1,35 @@
-// Get button
+
 let btn = document.getElementById("btn");
 
-// Store students
+
 let students = [];
 
-// Button click
+
 btn.onclick = function () {
 
-    // Get name and roll
+    // name and roll
     let name = document.getElementById("name").value;
     let roll = document.getElementById("roll").value;
 
-    // Get marks
+    //  marks
     let physics = Number(document.getElementById("physics").value);
     let chemistry = Number(document.getElementById("chemistry").value);
     let maths = Number(document.getElementById("maths").value);
 
-    // Calculate average
+    // Cal avg
     let average = (physics + chemistry + maths) / 3;
 
-    // Add student
+    // add student
     students.push({
         name: name,
         roll: roll,
         average: average
     });
 
-    // First student is topper
+    // first student is topper
     let topper = students[0];
 
-    // Find topper
+    //  topper
     for (let i = 1; i < students.length; i++) {
 
         if (students[i].average > topper.average) {
@@ -37,19 +37,19 @@ btn.onclick = function () {
         }
     }
 
-    // Create output
+    //  output
     let output = "";
 
     output = output + "<h2>Student Info :</h2>";
 
-    // Show topper
+    // show topper
     output = output + "<h3>Topper : "
         + topper.name
         + " ("
         + topper.average.toFixed(2)
         + ")</h3>";
 
-    // Create table
+    //  table
     output = output + "<table border='1'>";
 
     // Table heading
