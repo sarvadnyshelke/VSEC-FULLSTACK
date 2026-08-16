@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+    <h1>Student Form</h1>
+
+    <h3>Name:</h3>
+    <input type="text" id="name" placeholder="Enter Name">
+    <h3>Roll No:</h3>
+    <input type="text" id="roll" placeholder="Enter Roll No">
+
+    <h3>Marks:</h3>
+    <input type="text" id="DAA" placeholder="ENTER DAA MARKS">
+    <input type="text" id="AT" placeholder="ENTER AT MARKS">
+    <input type="text" id="CN" placeholder="ENTER CN MARKS  ">
+    <br><br>
+
+    <button id="SUBMIT">SUBMIT</button>
+    </div>
+
+    <h2>Student Records</h2>
+    <h2 id="Topper"></h2>
+    <table border="1" id="studentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>DAA</th>
+                <th>AT</th>
+                <th>CN</th>
+                <th>Total</th>
+                <th>Average</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+<script src="script.js"></script>
+</body>
+</html>
