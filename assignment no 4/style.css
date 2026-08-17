@@ -1,0 +1,41 @@
+body {
+    font-family: Arial;
+    background-color:lightgray;
+}
+.container {
+    width: 70%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+}
+h2 {
+    text-align: center;
+    color:black;
+}
+.slots {
+    gap: 20px;
+}
+.slot {
+    border: 1px solid black;
+    padding: 15px;
+}
+button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding:  15px;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+label {
+    display: block;
+}
+#message {
+    color: green;
+    text-align: center;
+    margin-top: 15px;
+}
