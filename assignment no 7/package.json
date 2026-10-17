@@ -1,0 +1,13 @@
+{
+    "name": "vsec-fullstack",
+    "version": "1.0.0",
+    "description": "Student API Assignment 7",
+    "main": "arrayApi.js",
+    "scripts": {
+        "start": "node arrayApi.js"
+    },
+    "type": "commonjs",
+    "dependencies": {
+        "express": "^5.3.0"
+    }
+}
