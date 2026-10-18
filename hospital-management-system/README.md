@@ -1,44 +1,70 @@
 # Hospital Management System
 
-React + Node/Express + MongoDB (Mongoose). Manage patients, doctors and appointments with full CRUD.
+A simple student project to manage **patients, doctors and appointments**.
 
-## Requirements
-- Node.js 18+
-- MongoDB running locally (`mongodb://127.0.0.1:27017`) or a MongoDB Atlas connection string
+**Tech:** React (Create React App), Node.js, Express.js, MongoDB (Mongoose), CSS.
 
-## Setup
+## What you need first
+1. [Node.js](https://nodejs.org) (version 16 or newer)
+2. MongoDB running locally ([MongoDB Community](https://www.mongodb.com/try/download/community)) **or** a free [MongoDB Atlas](https://www.mongodb.com/atlas) connection string
 
-### 1. Backend
+## How to run
+
+### 1. Start the backend (Terminal 1)
 ```bash
 cd server
 npm install
 cp .env.example .env      # Windows: copy .env.example .env
-# edit .env and set MONGO_URI if needed
-npm run dev               # or: npm start   -> http://localhost:5000
+npm start
 ```
+You should see `MongoDB connected` and `Server running on port 5000`.
+If you use MongoDB Atlas, paste your connection string into `MONGO_URI` in `server/.env`.
 
-### 2. Frontend (new terminal)
+### 2. Start the frontend (Terminal 2)
 ```bash
 cd client
 npm install
-cp .env.example .env      # optional; defaults to http://localhost:5000/api
-npm run dev               # -> http://localhost:5173
+cp .env.example .env      # Windows: copy .env.example .env
+npm start
+```
+Open **http://localhost:3000**
+
+## Folder structure
+```
+hospital-management-system/
+├── client/                 React app
+│   └── src/
+│       ├── components/     Layout, Message, ResourceForm, ResourcePage
+│       ├── pages/          Dashboard, Patients, Doctors, Appointments
+│       ├── services/       api.js (Axios calls to the backend)
+│       ├── App.js          Routes
+│       └── index.js        Starts React (CRA entry file)
+└── server/                 Express API
+    ├── config/db.js        MongoDB connection
+    ├── models/             Patient, Doctor, Appointment
+    ├── controllers/        CRUD logic
+    ├── routes/             API URLs
+    └── server.js           Main file
 ```
 
-Open http://localhost:5173.
-
-## Environment variables (`server/.env`)
-| Name | Description |
-|------|-------------|
-| PORT | API port (default 5000) |
-| MONGO_URI | MongoDB connection string |
-| CLIENT_URL | Frontend origin allowed by CORS (default http://localhost:5173) |
+## How it works
+- **Models** describe the data and rules (required fields, phone = 10 digits, ...).
+- **Controllers** do Create, Read, Update, Delete in MongoDB.
+- **Routes** connect URLs to controllers.
+- **ResourcePage** (React) is one reusable page used by Patients, Doctors and Appointments. Each page only lists its own form fields.
 
 ## API
-`GET /api/dashboard` and, for `patients`, `doctors`, `appointments`:
-`GET /api/<resource>`, `GET /api/<resource>/:id`, `POST /api/<resource>`, `PUT /api/<resource>/:id`, `DELETE /api/<resource>/:id`
+| Method | URL | Action |
+|---|---|---|
+| GET | /api/patients | Get all |
+| POST | /api/patients | Add new |
+| PUT | /api/patients/:id | Update |
+| DELETE | /api/patients/:id | Delete |
+| GET | /api/dashboard | Totals + recent appointments |
+
+The same routes exist for `/api/doctors` and `/api/appointments`.
 
 ## Notes
-- Appointments reference a patient and a doctor (chosen from dropdowns). Deleting a patient or doctor also deletes their appointments.
-- Add patients and doctors first, then book appointments.
-- Theme: white, blue, light gray and green. Text uses a dark shade of the blue.
+- Add patients and doctors first; the appointment form lets you pick from them.
+- Colors: white, blue, light gray, green (plus dark text for readability).
+- Never upload your real `.env` file to GitHub.

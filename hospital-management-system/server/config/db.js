@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
 
+// Connect to MongoDB using the address stored in .env
 const connectDB = async () => {
-  await mongoose.connect(process.env.MONGODB_URI);
-  console.log('MongoDB connected successfully');
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log('MongoDB connected');
+  } catch (err) {
+    console.error('MongoDB connection failed:', err.message);
+    process.exit(1);
+  }
 };
 
 module.exports = connectDB;
